@@ -18,6 +18,9 @@ class CreateAssetsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('original_filename');
             $table->string('new_filename');
+            $table->unsignedBigInteger('filesize')->default(0);
+            $table->string('extension')->nullable();
+            $table->string('mime_type')->nullable();
             $table->string('path')->nullable();
             $table->text('meta')->nullable();
             $table->string('disk');

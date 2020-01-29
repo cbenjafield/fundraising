@@ -46,7 +46,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        $this->mapAuthRoutes();
+        $this->mapLoggedInRoutes();
     }
 
     /**
@@ -85,9 +85,9 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function mapAuthRoutes()
+    protected function mapLoggedInRoutes()
     {
-        Route::middleware(['auth', 'web'])
+        Route::middleware(['web', 'auth'])
              ->namespace($this->namespace)
              ->group(base_path('routes/auth.php'));
     }

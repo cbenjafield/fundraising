@@ -7,6 +7,7 @@
 		<div class="w-1/2">
 			<div class="bg-white p-4 shadow rounded">
 				<h1 class="text-4xl font-bold pb-4 border-b-2 mb-4">Register</h1>
+				@include('partials.validation')
 				<form action="{{ url('register') }}" method="POST">
 					@csrf
 					<div class="mb-5">
